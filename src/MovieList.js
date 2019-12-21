@@ -1,31 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import Movie from './Movie';
+import {MovieContext} from './MovieContext'
 
 const MovieList = () => {
 
-        const [movies, setMovies] = useState([
-            {
-                name: 'Harry Potter',
-                price: '$10',
-                id: 212
-            },
-            {
-                name: 'Lincoln',
-                price: '$15',
-                id: 123212
-            },
-            {
-                name: 'Anno',
-                price: '$12',
-                id: 53212
-            }
-        ])
-
-
+    const value = useContext(MovieContext)
 
     return(
         <div>
-            <Movie movies={movies}/>
+            <Movie movies={value}/>
         </div>
     )
 
